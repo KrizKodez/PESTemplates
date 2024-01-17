@@ -14,6 +14,14 @@ In principle, we differentiate between two types of scripts, Controller scripts 
 | Tool | [PrivateLibraryCallerScriptName].ps1
 | | [PublicLibraryName].[CompanyName].ps1
 
+Controllers are the frontend of a PowerShell solution, the workhorse, so to speak, this is where the task is defined and solved. Tool scripts provide support in the form of functions, scriptblocks or modules, they are loaded and used by the controllers.
+
+### [ControllerWithFunctionsName].ps1
+This template is used if the controller is structured through usage of functions which reside inside the script. It uses a function called Main (like in other programming languages) as visible entry point for the code execution. Because of the fact that the Main function is the first function in the script it avoids searching and/or scrolling where the script starts.
+
+### [ControllerWithoutFunctions].ps1
+This template is the simplest one and should be used for relative short scripts without functions inside.
+
 
 
 ## Contributing
