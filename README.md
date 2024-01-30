@@ -7,21 +7,48 @@ The templates are a good starting point for working in a team and later perhaps 
 ## Description
 In principle, we differentiate between two types of scripts, Controller scripts and Tool scripts.
 
-| Type | Templates |
+| Type | Template |
 |------|------------|
 | Controller | [ControllerWithFunctionsName].ps1
-| | [ControllerWithoutFunctions].ps1
-| Tool | [PrivateLibraryCallerScriptName].ps1
-| | [PublicLibraryName].[CompanyName].ps1
+| | [ControllerWithoutFunctionsName].ps1
+| Tool | [PrivateLibraryCallerScriptName].lib.ps1
+| | [PublicLibraryName].[CompanyName].lib.ps1
 
-Controllers are the frontend of a PowerShell solution, the workhorse, so to speak, this is where the task is defined and solved. Tool scripts provide support in the form of functions, scriptblocks or modules, they are loaded and used by the controllers.
+Controllers are the frontend of a PowerShell solution, the workhorse, so to speak, this is where the task is defined and solved. Tool scripts provide support in the form of functions, scriptblocks or modules, they are loaded and used by the Controllers.
 
-### [ControllerWithFunctionsName].ps1
-This template is used if the controller is structured through usage of functions which reside inside the script. It uses a function called Main (like in other programming languages) as visible entry point for the code execution. Because of the fact that the Main function is the first function in the script it avoids searching and/or scrolling where the script starts.
+### **[ControllerWithFunctionsName].ps1**
+This template is used if the Controller is structured through usage of functions which reside inside the script. It uses a function called Main (like in other programming languages) as visible entry point for the code execution. Because of the fact that the Main function is the first function in the script it avoids searching where the script starts and annoying scrolling through a lot of functions which are not interesting when inspecting for the first time.
 
-### [ControllerWithoutFunctions].ps1
-This template is the simplest one and should be used for relative short scripts without functions inside.
+### **[ControllerWithoutFunctionsName].ps1**
+This template is used if the Controller does not have functions inside or load all needed functions from a library file.
 
+### **[PrivateLibraryCallerScriptName].lib.ps1**
+This template is a Tool and consist of all functions which are used only in one dedicated Controller. If functions could be used in other Controllers as well the author should move them to a public function library.
+
+### **[PublicLibraryName].[CompanyName].lib.ps1**
+This template is a Tool and contains a Company wide used function library.
+
+### **Naming the Templates in real use**
+As with all names they should be unique and descriptive but in the practice of the author it has been shown that administrators are using the Verb-Noun naming schema for PowerShell functions introduced from Microsoft also for the Controller names which leads in many cases to a lack of clear names. So the recommendation is:
+**<p align="center">:exclamation: Do not use Verb-Noun convention for Controller names :exclamation:</p>**
+
+If a Controller stores his functions in a private library Template its name must be identical with the Controller name extended with the suffix .lib.ps1 e.g.
+```
+RemoveFileShare.ps1
+RemoveFileShare.lib.ps1
+```
+
+For public library files the Tool name must be extended with the suffix [CompanyName].lib.ps1 e.g.
+```
+ActiveDirectory.ACME.lib.ps1
+```
+where the name of the library should describe the scope of the functions it contains. If the amount of library files of the company grow the PublicLibraryName itself could be devided into groups with the dot-notation comparable to the .Net-Namespaces e.g.
+```
+ActiveDirectory.User.ACME.lib.ps1
+ActiveDirectory.Group.ACME.lib.ps1
+Active.Directory.Check.ACME.lib.ps1
+```
+In this way a hierachical structure of library files is created.
 
 
 ## Contributing
