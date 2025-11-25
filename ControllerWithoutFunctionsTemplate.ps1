@@ -6,12 +6,14 @@
 
 .TEMPLATEVERSION 1
 
+.PLATFORM <PowerShellVersion>
+
 .GUID <GUID>
 
-.AUTHOR <Forename> <Surname> [(External <CompanyName>)]
+.AUTHOR <AuthorID> [(External <CompanyName>)]
 
 .CONTRIBUTORS
-    {<Forename> <Surname> [(External <CompanyName>)]}
+    {<AuthorID> [(External <CompanyName>)]}
 
 .COMPANYNAME <CompanyName>
 
@@ -34,7 +36,7 @@
     <Description>
 
 .RELEASENOTES
-    {<YYYY-MM-DD>,<Version>,<Author>,<ChangeDescription>}
+    {<YYYY-MM-DD>,<SemVersion>,<AuthorID>,<ChangeDescription>}
 
 #>
 
@@ -83,6 +85,9 @@
 # NA
 
 # DECLARATIONS AND DEFINITIONS
+    # ARGUMENTS
+    # NA
+
     # CONSTANTS
     # NA
 
@@ -90,7 +95,7 @@
     # NA
 
 
-# SCRIPT MAIN CODE
+# CONTROLLER MAIN CODE
 
 # END MAIN CODE
 

@@ -6,17 +6,22 @@
 
 .TEMPLATEVERSION 1
 
+.PLATFORM <PowerShellVersion>
+
 .GUID <GUID>
 
-.AUTHOR <Forename> <Surname> [(External <CompanyName>)]
+.AUTHOR <AuthorID> [(External <CompanyName>)]
 
 .CONTRIBUTORS
-    {<Forename> <Surname> [(External <CompanyName>)]}
+    {<AuthorID> [(External <CompanyName>)]}
 
 .COMPANYNAME <CompanyName>
 
 .TAGS
     {TagValue}
+
+.FUNCTIONS
+    <FunctionNames>
 
 .EXTERNALMODULEDEPENDENCIES
     {ModulName}
@@ -34,7 +39,7 @@
     <Description>
 
 .RELEASENOTES
-    {<YYYY-MM-DD>,<Version>,<Author>,<ChangeDescription>}
+    {<YYYY-MM-DD>,<SemVersion>,<AuthorID>,<ChangeDescription>}
 #>
 
 <#
@@ -82,6 +87,9 @@
 # NA
 
 # DECLARATIONS AND DEFINITIONS
+    # ARGUMENTS
+    # NA
+
     # CONSTANTS
     # NA
 
@@ -89,13 +97,15 @@
     # NA
 
 
-# SCRIPT MAIN CODE
-function Main {
+# CONTROLLER MAIN CODE
+function Main
+{
     
 }# End of function Main.
 
 # FUNCTIONS
-function <Verb><Noun> {
+function VerbNoun
+{
 <#
 [.SYNOPSIS
     <Synopsis>]
@@ -124,10 +134,15 @@ function <Verb><Noun> {
 # NA
 
 # DECLARATIONS AND DEFINITIONS
+    # ARGUMENTS
+    # NA
+
     # VARIABLES
     # NA
 
-}# End of function <Verb><Noun>
+# FUNCTION MAIN CODE
+
+}# End of function VerbNoun
 
 # SCRIPTBLOCKS
 # NA

@@ -7,18 +7,21 @@
 .GUID <GUID>
 
 .VERSIONS
-    <FunctionName>, <Major>.<Minor>.<Patch>
+    {<FunctionName>,<Major>.<Minor>.<Patch>}
 
 .AUTHORS
-    {<FunctionName>, <Forname> <Surname> [(External <CompanyName>)]}
+    {<FunctionName>,<AuthorID> [(External <CompanyName>)]}
 
 .CONTRIBUTORS
-    {<FunctionName>, <Forname> <Surname> [(External <CompanyName>)]}
+    {<FunctionName>,<AuthorID> [(External <CompanyName>)]}
 
 .COMPANYNAME <CompanyName>
 
 .TAGS
     {TagValue}
+
+.FUNCTIONS
+    {<FunctionName>,<Major>.<Minor>.<Patch>,<AuthorID>}
 
 .EXTERNALMODULEDEPENDENCIES
     {<FunctionName>,<ModuleName>}
@@ -29,12 +32,12 @@
 .REQUIREDBINARIES
     {<FunctionName>,<BinaryName>}
 
-.RELEASENOTES
-    {<YYYY-MM-DD>,<FunctionName>,<Version>,<Author>,<ChangeDescription>}
+.DESCRIPTION
+    <Description>
 
-[.Description
-    <Description>]
-   
+.RELEASENOTES
+    {<YYYY-MM-DD>,<FunctionName>,<SemVersion>,<AuthorID>,<ChangeDescription>}
+
 #>
 
 # DECLARATIONS AND DEFINITIONS
@@ -45,10 +48,11 @@
 # NA
 
 # FUNCTIONS
-function <Verb>-<CompanyPrefix><Noun>[V<Major>] {
+function Verb-CompanyPrefixNoun[V<Major>]
+{
 <#
-.SYNOPSIS
-    <Synopsis>
+[.SYNOPSIS
+    <Synopsis>]
 
 .DESCRIPTION
     <Description>
@@ -80,7 +84,12 @@ function <Verb>-<CompanyPrefix><Noun>[V<Major>] {
 # NA
 
 # DECLARATIONS AND DEFINITIONS
+    # ARGUMENTS
+    # NA
+
     # VARIABLES
     # NA
 
-}# End of function <Verb>-<CompanyPrefix><Noun>[V<Major>]
+# FUNCTION MAIN CODE
+
+}# End of function Verb-CompanyPrefixNoun[V<Major>]

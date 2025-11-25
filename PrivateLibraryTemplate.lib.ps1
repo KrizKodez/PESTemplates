@@ -4,34 +4,36 @@
 
 .TEMPLATEVERSION 1
 
+.PLATFORM <PowerShellVersion>
 .GUID <GUID>
 
-.AUTHOR <Forname> <Surname> [(External <CompanyName>)]
+.AUTHOR <AuthorID> [(External <CompanyName>)]
 
 .CONTRIBUTORS
-    {<Forename> <Surname> [(External <CompanyName>)]}
+    {<AuthorID> [(External <CompanyName>)]}
 
 .COMPANYNAME <CompanyName>
 
 .TAGS
     {TagValue}
 
-.EXTERNALMODULEDEPENDENCIES
+.FUNCTIONS
+    <FunctionNames>
 
-.REQUIREDSCRIPTS
-    <CallerScriptName>
- 
-.EXTERNALSCRIPTDEPENDENCIES
-    {ScriptDependency}
- 
+.EXTERNALMODULEDEPENDENCIES
+    {<FunctionName>,<ModuleName>}
+
+.REQUIREDSCRIPTS <ControllerName>
+
 .REQUIREDBINARIES
-    {BinaryName}
+    {<FunctionName>,<BinaryName>}        
+
+.DESCRIPTION
+    This library contains private functions for the script defined in REQUIREDSCRIPTS.
 
 .RELEASENOTES 
-    <YYYY-MM-DD>,<FunctionName>,<Author>,<ChangeDescription>
+    {<YYYY-MM-DD>,<FunctionName>,<AuthorID>,<ChangeDescription>}
 
-.Description
-    This library contains private functions for the script defined in REQUIREDSCRIPTS.
 #>
 
 # DECLARATIONS AND DEFINITIONS
@@ -45,7 +47,8 @@
 # NA
 
 # FUNCTIONS
-function <Verb><Noun> {
+function VerbNoun
+{
 <#
 [.SYNOPSIS
     <Synopsis>]
@@ -74,8 +77,13 @@ function <Verb><Noun> {
 # NA
 
 # DECLARATIONS AND DEFINITIONS
+    # ARGUMENTS
+    # NA
+
     # VARIABLES
     # NA
 
-}# End of function <Verb><Noun>
+# FUNCTION MAIN CODE
+
+}# End of function VerbNoun
 
