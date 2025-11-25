@@ -9,23 +9,23 @@ In principle, we differentiate between two types of scripts, Controller scripts 
 
 | Type | Template |
 |------|------------|
-| Controller | [ControllerWithFunctionsName].ps1
-| | [ControllerWithoutFunctionsName].ps1
-| Tool | [PrivateLibraryCallerScriptName].lib.ps1
-| | [PublicLibraryName].[CompanyName].lib.ps1
+| Controller | ControllerWithFunctionsTemplate.ps1
+| | ControllerWithoutFunctionsTemplate.ps1
+| Tool | PrivateLibraryTemplate.lib.ps1
+| | PublicLibraryTemplate.lib.ps1
 
 Controllers are the frontend of a PowerShell solution, the workhorse, so to speak, this is where the task is defined and solved. Tool scripts provide support in the form of functions, scriptblocks or modules, they are loaded and used by the Controllers.
 
-### **[ControllerWithFunctionsName].ps1**
+### **ControllerWithFunctionsTemplate.ps1**
 This template is used if the Controller is structured through usage of functions which reside inside the script. It uses a function called Main (like in other programming languages) as visible entry point for the code execution. Because of the fact that the Main function is the first function in the script it avoids searching where the script starts and annoying scrolling through a lot of functions which are not interesting when inspecting for the first time.
 
-### **[ControllerWithoutFunctionsName].ps1**
+### **ControllerWithoutFunctionsTemplate.ps1**
 This template is used if the Controller does not have functions inside or load all needed functions from a library file.
 
-### **[PrivateLibraryCallerScriptName].lib.ps1**
+### **PrivateLibraryTemplate.lib.ps1**
 This template is a Tool and consist of all functions which are used only in one dedicated Controller. If functions could be used in other Controllers as well the author should move them to a public function library.
 
-### **[PublicLibraryName].[CompanyName].lib.ps1**
+### **PublicLibraryNameTemplate.lib.ps1**
 This template is a Tool and contains a Company wide used function library.
 
 ### **Naming the Templates in real use**
